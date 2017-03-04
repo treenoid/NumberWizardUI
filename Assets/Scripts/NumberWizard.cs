@@ -7,40 +7,26 @@ public class NumberWizard : MonoBehaviour
 	
 	public Text variableText;	
 	public int maxGuessesAllowed; 
+
 	
 	int max;
 	int min;
 	int guess;
 	
-
 	void Start()
+	{
+		StartGame();
+		
+	}
+	
+	void StartGame () 
 	{
 		max = 1000;
 		min = 1;
+		if 		(Application.loadedLevelName == "GameEasy")			{maxGuessesAllowed = 10;}		
+		else if (Application.loadedLevelName == "GameHard")			{maxGuessesAllowed = 15;}
+		else if (Application.loadedLevelName == "GameRelentless")	{maxGuessesAllowed = 30;}
 		
-	}
-		
-	void Update ()
-	{
-//		Easy ();
-//		Hard ();
-//		Relentless ();
-	}
-	public void Easy()
-	{
-		maxGuessesAllowed = 5;		
-		NextGuess();
-	}
-	
-	public void Hard()
-	{
-		maxGuessesAllowed = 10;
-		NextGuess();
-	}
-	
-	public void Relentless()
-	{
-		maxGuessesAllowed = 25;
 		NextGuess();
 	}
 	
